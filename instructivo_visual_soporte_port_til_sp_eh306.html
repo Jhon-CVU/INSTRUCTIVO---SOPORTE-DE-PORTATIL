@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructivo Técnico: Armado y Configuración de Soporte Portátil - Círculo de Viajes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-salmon: #FA5267;
+            --brand-salmon-soft: #FFF1F3;
+            --warm-ink: #272429;
+            --warm-bg: #F8F6F4;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--warm-bg);
+            color: var(--warm-ink);
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .page-sheet {
+            max-width: 1140px;
+            margin: 1.5rem auto;
+            background: #FFFFFF;
+            box-shadow: 0 14px 40px -10px rgba(39, 36, 41, 0.1);
+            border-radius: 24px;
+            border: 1px solid #EFECE8;
+            overflow: hidden;
+        }
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 8mm;
+            }
+            body {
+                background-color: #FFFFFF;
+                padding: 0 !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .page-sheet {
+                margin: 0;
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                max-width: 100%;
+                width: 100%;
+            }
+            .avoid-break {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-[1140px] mx-auto mb-6 flex flex-wrap items-center justify-between gap-4 bg-[#272429] text-white px-6 py-4 rounded-2xl shadow-md no-print">
+        <div class="flex items-center gap-3.5">
+            <span class="bg-[#FA5267]/20 text-[#FA5267] p-2.5 rounded-xl">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+            </span>
+            <div>
+                <p class="text-base font-bold">Instructivo Corporativo en Formato Amplio (Listo para PDF)</p>
+                <p class="text-sm text-stone-300">Presione el botón derecho y seleccione "Guardar como PDF" en el cuadro de diálogo de impresión.</p>
+            </div>
+        </div>
+        <button onclick="window.print()" class="bg-[#FA5267] hover:bg-[#e44156] text-white font-bold text-base px-6 py-3 rounded-xl shadow-sm transition flex items-center gap-2.5 cursor-pointer">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+            </svg>
+            Exportar / Guardar como PDF
+        </button>
+    </div>
+
+    <div class="page-sheet">
+        
+        <!-- Franja decorativa superior con color de marca -->
+        <div class="h-3.5 w-full bg-gradient-to-r from-[#FA5267] via-[#ff7586] to-[#FA5267]"></div>
+
+        <div class="p-8 md:p-12 space-y-9">
+            
+            <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 border-b-2 border-stone-200 pb-7">
+                <div class="space-y-2.5 max-w-3xl">
+                    <div class="inline-flex items-center gap-2.5 bg-[#FFF1F3] text-[#FA5267] px-4 py-1.5 rounded-full text-xs md:text-sm font-bold uppercase tracking-wider border border-[#FA5267]/20">
+                        <span>Instructivo Técnico de Uso y Ergonomía</span>
+                        <span>•</span>
+                        <span>Ref. SP-EH306</span>
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-[#272429] tracking-tight leading-tight">
+                        Manual de Armado, Configuración y Cuidado del Soporte para Portátil
+                    </h1>
+                    <p class="text-base md:text-lg text-stone-600 leading-relaxed">
+                        Lineamientos para el despliegue inicial, calibración de tensión mecánica y uso adecuado del soporte ergonómico plegable en aluminio asignado al colaborador.
+                    </p>
+                </div>
+
+                <!-- Logo Círculo de Viajes -->
+                <div class="shrink-0 flex items-center gap-3 self-end sm:self-center">
+                    <div class="w-28 h-28 md:w-32 md:h-32 relative flex items-center justify-center">
+                        <img 
+                            src="https://i.imgur.com/3O5rxsn.png" 
+                            alt="Logo Círculo de Viajes" 
+                            class="w-full h-full object-contain"
+                            onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';"
+                        />
+                        <!-- Respaldo vectorial del logo de Círculo de Viajes -->
+                        <svg id="logo-fallback" style="display:none;" viewBox="0 0 200 200" class="w-full h-full">
+                            <path d="M 148 40 A 78 78 0 1 0 172 72" fill="none" stroke="#FA5267" stroke-width="7" stroke-linecap="round"/>
+                            <g transform="translate(160, 52) rotate(-35)">
+                                <path d="M0 -14 C3 -14 4 -8 4 0 L18 6 L18 10 L4 7 L4 15 L9 19 L9 22 L0 19 L-9 22 L-9 29 L-4 15 L-4 7 L-18 10 L-18 6 L-4 0 C-4 -8 -3 -14 0 -14 Z" fill="#FA5267"/>
+                            </g>
+                            <text x="100" y="96" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="33" font-weight="500" fill="#FA5267" letter-spacing="-0.5">Círculo</text>
+                            <text x="53" y="123" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="21" font-weight="500" fill="#FA5267">de</text>
+                            <text x="118" y="132" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="35" font-weight="500" fill="#FA5267" letter-spacing="-0.5">Viajes</text>
+                        </svg>
+                    </div>
+                </div>
+            </header>
+
+            <section class="grid grid-cols-2 lg:grid-cols-4 gap-4 avoid-break">
+                <div class="bg-[#FAF8F6] border border-stone-200 rounded-2xl p-4 flex items-center gap-4">
+                    <span class="text-2xl bg-white w-12 h-12 rounded-xl shadow-sm flex items-center justify-center border border-stone-200/80 shrink-0">💻</span>
+                    <div>
+                        <p class="text-xs font-bold text-stone-500 uppercase tracking-wider">Compatibilidad</p>
+                        <p class="text-base md:text-lg font-extrabold text-stone-800">Equipos de 11" a 17"</p>
+                    </div>
+                </div>
+                <div class="bg-[#FAF8F6] border border-stone-200 rounded-2xl p-4 flex items-center gap-4">
+                    <span class="text-2xl bg-white w-12 h-12 rounded-xl shadow-sm flex items-center justify-center border border-stone-200/80 shrink-0">⚖️</span>
+                    <div>
+                        <p class="text-xs font-bold text-stone-500 uppercase tracking-wider">Capacidad Máxima</p>
+                        <p class="text-base md:text-lg font-extrabold text-stone-800">Hasta 10 kg de carga</p>
+                    </div>
+                </div>
+                <div class="bg-[#FAF8F6] border border-stone-200 rounded-2xl p-4 flex items-center gap-4">
+                    <span class="text-2xl bg-white w-12 h-12 rounded-xl shadow-sm flex items-center justify-center border border-stone-200/80 shrink-0">📐</span>
+                    <div>
+                        <p class="text-xs font-bold text-stone-500 uppercase tracking-wider">Rango de Elevación</p>
+                        <p class="text-base md:text-lg font-extrabold text-stone-800">Graduable 5 a 30 cm</p>
+                    </div>
+                </div>
+                <div class="bg-[#FFF1F3] border border-[#FA5267]/30 rounded-2xl p-4 flex items-center gap-4">
+                    <span class="text-2xl bg-white w-12 h-12 rounded-xl shadow-sm flex items-center justify-center border border-[#FA5267]/20 shrink-0">🔧</span>
+                    <div>
+                        <p class="text-xs font-bold text-[#FA5267] uppercase tracking-wider">Kit de Ajuste</p>
+                        <p class="text-base md:text-lg font-extrabold text-stone-800">2 Llaves hexagonales</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-[#FFF9FA] border-2 border-[#FA5267]/30 rounded-3xl p-6 md:p-8 avoid-break">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-[#FA5267]/15 pb-5 mb-6">
+                    <div>
+                        <span class="inline-block bg-[#FA5267] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-md mb-2">
+                            Sección 1 • Atención Frecuente
+                        </span>
+                        <h2 class="text-xl md:text-2xl font-extrabold text-[#272429]">
+                            Armado y Despliegue Inicial (Al retirar el elemento de la caja)
+                        </h2>
+                    </div>
+                    <p class="text-sm text-stone-600 max-w-md bg-white px-4 py-2.5 rounded-xl border border-stone-200">
+                        <strong>Nota importante:</strong> El soporte <strong>no requiere ensamblar piezas sueltas</strong>. Viene preensamblado en una sola estructura plegada con alta rigidez de fábrica.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Subpaso 1A: Orientación de las bases -->
+                    <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-[#FFF1F3] text-[#FA5267] font-extrabold text-sm px-3 py-1 rounded-lg border border-[#FA5267]/20">Paso 1.1</span>
+                                <span class="text-xs font-bold text-stone-400 uppercase">Orientación</span>
+                            </div>
+                            <h3 class="text-base md:text-lg font-extrabold text-stone-800 mb-2">Identifique la Base y la Bandeja</h3>
+                            <p class="text-sm text-stone-600 leading-relaxed mb-4">
+                                Ubique el soporte cerrado sobre el escritorio. La <strong>placa más pequeña (24 cm)</strong> corresponde a la <strong>Base Inferior</strong> (apoyo en mesa). La <strong>placa más amplia (26,5 cm)</strong> con abertura central de ventilación debe quedar hacia arriba.
+                            </p>
+                        </div>
+                        <div class="bg-[#FAF8F6] rounded-xl border border-stone-200/80 p-3">
+                            <svg viewBox="0 0 280 130" class="w-full h-auto">
+                                <!-- Escritorio -->
+                                <line x1="20" y1="110" x2="260" y2="110" stroke="#D6D3D1" stroke-width="4" stroke-linecap="round"/>
+                                <!-- Bandeja Superior (Cerrada arriba) -->
+                                <rect x="40" y="62" width="195" height="10" rx="5" fill="#FA5267"/>
+                                <text x="138" y="52" text-anchor="middle" font-size="11" font-weight="800" fill="#FA5267">ARRIBA: Bandeja Superior (26,5 cm)</text>
+                                <!-- Brazo intermedio plegado -->
+                                <rect x="65" y="75" width="150" height="10" rx="4" fill="#A8A29E"/>
+                                <!-- Base Inferior (Abajo en mesa) -->
+                                <rect x="55" y="88" width="165" height="10" rx="5" fill="#272429"/>
+                                <rect x="70" y="98" width="22" height="5" rx="2" fill="#57534E"/>
+                                <rect x="180" y="98" width="22" height="5" rx="2" fill="#57534E"/>
+                                <text x="138" y="125" text-anchor="middle" font-size="10.5" font-weight="700" fill="#272429">ABAJO: Base Inferior sobre escritorio (24 cm)</text>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Subpaso 1B: Despliegue en Z -->
+                    <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-[#FFF1F3] text-[#FA5267] font-extrabold text-sm px-3 py-1 rounded-lg border border-[#FA5267]/20">Paso 1.2</span>
+                                <span class="text-xs font-bold text-stone-400 uppercase">Apertura</span>
+                            </div>
+                            <h3 class="text-base md:text-lg font-extrabold text-stone-800 mb-2">Despliegue la estructura en "Z"</h3>
+                            <p class="text-sm text-stone-600 leading-relaxed mb-4">
+                                Presione firmemente la <strong>Base Inferior</strong> contra el escritorio con una mano y, con la otra, tire de la <strong>Bandeja Superior hacia arriba</strong>. Es normal sentir una resistencia elevada debido al ajuste de fábrica.
+                            </p>
+                        </div>
+                        <div class="bg-[#FAF8F6] rounded-xl border border-stone-200/80 p-3">
+                            <svg viewBox="0 0 280 130" class="w-full h-auto">
+                                <line x1="20" y1="115" x2="260" y2="115" stroke="#D6D3D1" stroke-width="4" stroke-linecap="round"/>
+                                <!-- Base fija -->
+                                <rect x="65" y="103" width="140" height="9" rx="4.5" fill="#272429"/>
+                                <!-- Flecha mano 1 presionando base -->
+                                <path d="M 105 78 L 105 97" stroke="#272429" stroke-width="3" stroke-linecap="round"/>
+                                <polygon points="100,95 105,102 110,95" fill="#272429"/>
+                                <text x="105" y="72" text-anchor="middle" font-size="9.5" font-weight="800" fill="#272429">1. Sujetar base</text>
+
+                                <!-- Brazo subiendo -->
+                                <line x1="185" y1="106" x2="125" y2="50" stroke="#A8A29E" stroke-width="11" stroke-linecap="round"/>
+                                <!-- Bandeja subiendo -->
+                                <g transform="translate(125, 50) rotate(-15)">
+                                    <rect x="-55" y="-5" width="135" height="9" rx="4.5" fill="#FA5267"/>
+                                </g>
+                                <!-- Flecha mano 2 elevando -->
+                                <path d="M 195 58 Q 195 30 165 25" fill="none" stroke="#FA5267" stroke-width="3" stroke-linecap="round"/>
+                                <polygon points="168,20 158,24 166,30" fill="#FA5267"/>
+                                <text x="215" y="42" text-anchor="middle" font-size="9.5" font-weight="800" fill="#FA5267">2. Elevar bandeja</text>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Subpaso 1C: Pestañas de sujeción -->
+                    <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="bg-[#FFF1F3] text-[#FA5267] font-extrabold text-sm px-3 py-1 rounded-lg border border-[#FA5267]/20">Paso 1.3</span>
+                                <span class="text-xs font-bold text-stone-400 uppercase">Sujeción</span>
+                            </div>
+                            <h3 class="text-base md:text-lg font-extrabold text-stone-800 mb-2">Levante las pestañas frontales</h3>
+                            <p class="text-sm text-stone-600 leading-relaxed mb-4">
+                                En el borde inferior de la bandeja superior encontrará <strong>dos pestañas abatibles</strong> con recubrimiento en caucho. Despliéguelas hacia arriba en un ángulo de <strong>90°</strong> antes de apoyar el computador portátil.
+                            </p>
+                        </div>
+                        <div class="bg-[#FAF8F6] rounded-xl border border-stone-200/80 p-3">
+                            <svg viewBox="0 0 280 130" class="w-full h-auto">
+                                <!-- Detalle de bandeja inclinada -->
+                                <g transform="translate(55, 85) rotate(-18)">
+                                    <!-- Bandeja -->
+                                    <rect x="0" y="0" width="175" height="12" rx="5" fill="#57534E"/>
+                                    <!-- Pestaña abatida (punteada) -->
+                                    <rect x="0" y="-6" width="28" height="6" rx="2" fill="#D6D3D1" stroke="#78716C" stroke-dasharray="2 2"/>
+                                    <!-- Pestaña levantada a 90 grados -->
+                                    <rect x="0" y="-32" width="10" height="34" rx="4" fill="#FA5267"/>
+                                    <!-- Tope de caucho interno -->
+                                    <rect x="10" y="-28" width="4" height="24" rx="2" fill="#272429"/>
+                                    <!-- Flecha de giro de la pestaña -->
+                                    <path d="M 28 -12 A 22 22 0 0 0 14 -30" fill="none" stroke="#FA5267" stroke-width="2.5"/>
+                                    <polygon points="16,-34 8,-30 15,-25" fill="#FA5267"/>
+                                </g>
+                                <text x="145" y="28" text-anchor="middle" font-size="10.5" font-weight="800" fill="#FA5267">Levantar las 2 pestañas a 90°</text>
+                                <text x="145" y="116" text-anchor="middle" font-size="10" font-weight="600" fill="#57534E">Impiden que el equipo se deslice hacia adelante</text>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 avoid-break">
+                
+                <!-- Bloque 2A: Anatomía de los ejes (5 columnas) -->
+                <div class="lg:col-span-5 bg-[#FAF8F6] border border-stone-200 rounded-3xl p-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold text-[#FA5267] uppercase tracking-wider">Sección 2 • Componentes Mecánicos</span>
+                        <h2 class="text-xl font-extrabold text-stone-800 mt-1">Identificación de los 4 Ejes de Giro</h2>
+                        <p class="text-sm text-stone-600 mt-2 leading-relaxed">
+                            El soporte cuenta con <strong>4 articulaciones laterales de fricción</strong> (2 superiores y 2 inferiores) que permiten graduar la posición y sostener hasta 10 kg de peso:
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-stone-200/80 p-4 my-4">
+                        <svg viewBox="0 0 340 205" class="w-full h-auto">
+                            <!-- Escritorio -->
+                            <line x1="20" y1="185" x2="320" y2="185" stroke="#D6D3D1" stroke-width="4" stroke-linecap="round"/>
+                            
+                            <!-- Base en mesa -->
+                            <rect x="80" y="172" width="145" height="10" rx="5" fill="#78716C"/>
+                            <rect x="92" y="182" width="24" height="3.5" rx="1.5" fill="#292524"/>
+                            <rect x="188" y="182" width="24" height="3.5" rx="1.5" fill="#292524"/>
+
+                            <!-- Brazo en Z -->
+                            <line x1="205" y1="176" x2="112" y2="92" stroke="#A8A29E" stroke-width="16" stroke-linecap="round"/>
+                            <line x1="205" y1="176" x2="112" y2="92" stroke="#E7E5E4" stroke-width="8" stroke-linecap="round"/>
+
+                            <!-- Bandeja superior con portátil -->
+                            <g transform="translate(112, 92) rotate(-20)">
+                                <rect x="-65" y="-5" width="160" height="10" rx="5" fill="#57534E"/>
+                                <path d="M -65 0 L -65 -18 L -56 -18 L -56 -5" fill="#292524"/>
+                                <rect x="-54" y="-12" width="132" height="7" rx="3.5" fill="#FA5267"/>
+                                <line x1="75" y1="-9" x2="102" y2="-78" stroke="#FA5267" stroke-width="6" stroke-linecap="round"/>
+                            </g>
+
+                            <!-- Puntos de giro -->
+                            <circle cx="112" cy="92" r="11" fill="#FA5267" stroke="white" stroke-width="3"/>
+                            <circle cx="205" cy="176" r="11" fill="#272429" stroke="white" stroke-width="3"/>
+
+                            <!-- Etiquetas técnicas -->
+                            <text x="14" y="68" font-size="11.5" font-weight="800" fill="#FA5267">Ejes Superiores (x2)</text>
+                            <text x="14" y="82" font-size="10.5" fill="#57534E">Regulan el ángulo de inclinación</text>
+                            <path d="M 80 87 Q 94 90 100 91" fill="none" stroke="#FA5267" stroke-width="2" stroke-dasharray="3 2"/>
+
+                            <text x="205" y="130" font-size="11.5" font-weight="800" fill="#272429">Ejes Inferiores (x2)</text>
+                            <text x="205" y="144" font-size="10.5" fill="#57534E">Regulan la altura de la bandeja</text>
+                            <path d="M 240 150 Q 228 164 218 171" fill="none" stroke="#272429" stroke-width="2" stroke-dasharray="3 2"/>
+
+                            <text x="14" y="138" font-size="10.5" font-weight="700" fill="#57534E">Pestañas de sujeción</text>
+                            <text x="14" y="151" font-size="9.5" fill="#78716C">(Desplegadas a 90°)</text>
+                        </svg>
+                    </div>
+
+                    <p class="text-xs md:text-sm text-stone-600 bg-white p-3.5 rounded-xl border border-stone-200/80">
+                        <strong>Disipación térmica:</strong> El diseño abierto de la bandeja superior permite el flujo continuo de aire, evitando el sobrecalentamiento del portátil.
+                    </p>
+                </div>
+
+                <!-- Bloque 2B: Sistema de Contratuerca con las 2 llaves (7 columnas) -->
+                <div class="lg:col-span-7 bg-[#FAF8F6] border border-stone-200 rounded-3xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <span class="text-xs font-bold text-[#FA5267] uppercase tracking-wider">Operación de Herramientas</span>
+                            <span class="bg-[#FFF1F3] text-[#FA5267] text-xs font-bold px-3 py-1 rounded-full border border-[#FA5267]/20">
+                                Sistema de Contratuerca
+                            </span>
+                        </div>
+                        <h2 class="text-xl font-extrabold text-stone-800 mt-1">¿Por qué se deben utilizar las DOS llaves simultáneamente?</h2>
+                        <p class="text-sm text-stone-600 mt-2 leading-relaxed">
+                            Cada articulación está unida por un <strong>eje pasante continuo</strong>. Si se intenta girar únicamente un lado con una sola llave, el eje completo girará en falso sin modificar la tensión. Es indispensable operar <strong>ambas llaves al mismo tiempo</strong>:
+                        </p>
+                    </div>
+
+                    <!-- Gráfico técnico de llaves en contratuerca -->
+                    <div class="bg-white rounded-2xl border border-stone-200/80 p-4 my-4">
+                        <svg viewBox="0 0 460 195" class="w-full h-auto">
+                            <text x="230" y="20" text-anchor="middle" font-size="10.5" font-weight="800" fill="#78716C" letter-spacing="0.8">VISTA FRONTAL DE UN EJE DE ARTICULACIÓN</text>
+
+                            <!-- Cuerpo central del soporte -->
+                            <rect x="155" y="72" width="28" height="66" rx="5" fill="#D6D3D1" stroke="#78716C" stroke-width="1.5"/>
+                            <rect x="188" y="62" width="84" height="86" rx="8" fill="#F5F5F4" stroke="#78716C" stroke-width="1.5"/>
+                            <rect x="277" y="72" width="28" height="66" rx="5" fill="#D6D3D1" stroke="#78716C" stroke-width="1.5"/>
+
+                            <!-- Eje interno pasante -->
+                            <line x1="135" y1="105" x2="325" y2="105" stroke="#57534E" stroke-width="10" stroke-dasharray="5 3"/>
+                            <text x="230" y="109" text-anchor="middle" font-size="9.5" font-weight="800" fill="#272429">EJE PASANTE INTERNO</text>
+
+                            <!-- Tuercas hexagonales en ambos extremos -->
+                            <rect x="140" y="92" width="13" height="26" rx="2" fill="#272429"/>
+                            <rect x="307" y="92" width="13" height="26" rx="2" fill="#272429"/>
+
+                            <!-- Llave 1 Izquierda (INMOVILIZA) -->
+                            <g transform="translate(58, 90)">
+                                <rect x="10" y="8" width="62" height="15" rx="4" fill="#57534E"/>
+                                <circle cx="76" cy="15.5" r="15" fill="#57534E"/>
+                                <polygon points="76,8 83,11.5 83,19.5 76,23 69,19.5 69,11.5" fill="white"/>
+                                <rect x="-12" y="-34" width="108" height="25" rx="6" fill="#F5F5F4" stroke="#D6D3D1"/>
+                                <text x="42" y="-18" text-anchor="middle" font-size="10.5" font-weight="800" fill="#272429">LLAVE 1: INMOVILIZA</text>
+                            </g>
+                            <text x="95" y="150" text-anchor="middle" font-size="10.5" font-weight="700" fill="#272429">Sujete con firmeza</text>
+                            <text x="95" y="164" text-anchor="middle" font-size="9.5" fill="#57534E">(Evita que el eje gire en falso)</text>
+
+                            <!-- Llave 2 Derecha (APLICA TORQUE) -->
+                            <g transform="translate(315, 90)">
+                                <rect x="12" y="8" width="62" height="15" rx="4" fill="#FA5267"/>
+                                <circle cx="6" cy="15.5" r="15" fill="#FA5267"/>
+                                <polygon points="6,8 13,11.5 13,19.5 6,23 -1,19.5 -1,11.5" fill="white"/>
+                                <rect x="-18" y="-34" width="118" height="25" rx="6" fill="#FFF1F3" stroke="#FA5267"/>
+                                <text x="41" y="-18" text-anchor="middle" font-size="10.5" font-weight="800" fill="#FA5267">LLAVE 2: GRADÚA TENSIÓN</text>
+                            </g>
+
+                            <!-- Flecha curva de giro -->
+                            <path d="M 385 126 A 24 24 0 0 1 350 148" fill="none" stroke="#FA5267" stroke-width="2.5" stroke-linecap="round"/>
+                            <polygon points="350,143 342,149 351,153" fill="#FA5267"/>
+                            <text x="368" y="166" text-anchor="middle" font-size="10" font-weight="700" fill="#047857">Sentido horario (Derecha) = Aprieta</text>
+                            <text x="368" y="180" text-anchor="middle" font-size="10" font-weight="700" fill="#B45309">Sentido antihorario (Izquierda) = Afloja</text>
+                        </svg>
+                    </div>
+
+                    <!-- Advertencia formal de seguridad -->
+                    <div class="bg-amber-50 border border-amber-300/90 rounded-2xl px-4 py-3.5 flex items-start gap-3">
+                        <span class="text-lg mt-0.5">⚠️</span>
+                        <p class="text-xs md:text-sm text-amber-950 leading-relaxed">
+                            <strong>ADVERTENCIA DE SEGURIDAD:</strong> Nunca utilice las llaves para aflojar los tornillos mientras el computador portátil se encuentre sobre el soporte. Al liberar la tensión de los ejes, la bandeja puede descender bruscamente y ocasionar daños al equipo o atrapamiento en las manos.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="avoid-break">
+                <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-4 gap-2">
+                    <h2 class="text-xl md:text-2xl font-extrabold text-[#272429] flex items-center gap-2.5">
+                        <span class="w-3 h-3 rounded-full bg-[#FA5267] inline-block"></span>
+                        Sección 3 • Procedimiento de Calibración de Tensión y Altura (4 Pasos)
+                    </h2>
+                    <span class="text-xs md:text-sm font-semibold text-stone-500 uppercase tracking-wider">Ajuste de acuerdo con el peso del portátil</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    
+                    <!-- PASO 1 -->
+                    <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-8 h-8 rounded-full bg-[#FFF1F3] text-[#FA5267] font-extrabold text-sm flex items-center justify-center border border-[#FA5267]/20">1</span>
+                                <span class="text-xs font-bold text-stone-400 uppercase">Preparación</span>
+                            </div>
+                            <h3 class="font-extrabold text-base text-stone-800 mb-2">Despeje el soporte</h3>
+                            <p class="text-sm text-stone-600 leading-relaxed">
+                                Retire el computador portátil de la base. Si su unidad cuenta con tapones embellecedores de caucho sobre las tuercas laterales, retírelos suavemente para descubrir los cabezales hexagonales.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-bold">
+                            <span>Estructura sin carga encima</span>
+                            <span>100% Seguro</span>
+                        </div>
+                    </div>
+
+                    <!-- PASO 2 -->
+                    <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-8 h-8 rounded-full bg-[#FFF1F3] text-[#FA5267] font-extrabold text-sm flex items-center justify-center border border-[#FA5267]/20">2</span>
+                                <span class="text-xs font-bold text-amber-700 uppercase">Liberación</span>
+                            </div>
+                            <h3 class="font-extrabold text-base text-stone-800 mb-2">Reduzca la rigidez inicial</h3>
+                            <p class="text-sm text-stone-600 leading-relaxed">
+                                Si las articulaciones están excesivamente rígidas, coloque ambas llaves en el eje: sujete un extremo y gire el opuesto <strong>hacia la izquierda apenas 1/4 de vuelta</strong> (no desenrosque la tuerca por completo).
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-amber-700 font-bold">
+                            <span>↺ Giro antihorario (1/4 vuelta)</span>
+                            <span>2 Llaves</span>
+                        </div>
+                    </div>
+
+                    <!-- PASO 3 -->
+                    <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-8 h-8 rounded-full bg-[#FFF1F3] text-[#FA5267] font-extrabold text-sm flex items-center justify-center border border-[#FA5267]/20">3</span>
+                                <span class="text-xs font-bold text-stone-400 uppercase">Graduación</span>
+                            </div>
+                            <h3 class="font-extrabold text-base text-stone-800 mb-2">Defina la altura visual</h3>
+                            <p class="text-sm text-stone-600 leading-relaxed">
+                                Eleve la bandeja superior, verifique que las 2 pestañas frontales estén levantadas y ubique temporalmente el portátil para comprobar que el <strong>borde superior de la pantalla quede al nivel de sus ojos</strong>.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-stone-600 font-bold">
+                            <span>Alineación visual horizontal</span>
+                            <span>24 a 52 cm</span>
+                        </div>
+                    </div>
+
+                    <!-- PASO 4 -->
+                    <div class="bg-white border border-stone-200 rounded-2xl p-5 flex flex-col justify-between shadow-sm">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="w-8 h-8 rounded-full bg-[#FA5267] text-white font-extrabold text-sm flex items-center justify-center">4</span>
+                                <span class="text-xs font-bold text-emerald-700 uppercase">Fijación</span>
+                            </div>
+                            <h3 class="font-extrabold text-base text-stone-800 mb-2">Apriete y verifique firmeza</h3>
+                            <p class="text-sm text-stone-600 leading-relaxed">
+                                Retire un momento el portátil, apriete los 4 ejes <strong>hacia la derecha</strong> con ambas llaves aplicando presión uniforme en ambos lados, recoloque los tapones de caucho e instale nuevamente el equipo.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-emerald-700 font-bold">
+                            <span>↻ Giro horario firme</span>
+                            <span>Estabilidad total</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 avoid-break">
+                
+                <!-- Estándar de Higiene Postural (7 columnas) -->
+                <div class="lg:col-span-7 bg-[#FAF8F6] border border-stone-200 rounded-3xl p-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold text-[#FA5267] uppercase tracking-wider">Sección 4 • Seguridad y Salud en el Trabajo (SST)</span>
+                        <h2 class="text-xl font-extrabold text-stone-800 mt-1">
+                            Parámetros Ergonómicos en el Puesto de Trabajo
+                        </h2>
+                        <p class="text-sm text-stone-600 mt-2 leading-relaxed">
+                            Para prevenir fatiga cervical y sobreesfuerzo en miembros superiores, el uso del soporte elevado requiere <strong>obligatoriamente el uso de teclado y mouse externos</strong> apoyados sobre la superficie del escritorio.
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl border border-stone-200/80 p-4 mt-4">
+                        <svg viewBox="0 0 460 180" class="w-full h-auto">
+                            <!-- Superficie de escritorio -->
+                            <line x1="25" y1="152" x2="435" y2="152" stroke="#A8A29E" stroke-width="4.5" stroke-linecap="round"/>
+
+                            <!-- Colaborador ilustrado -->
+                            <circle cx="88" cy="48" r="17" fill="#FDE68A" stroke="#57534E" stroke-width="2"/>
+                            <path d="M 71 46 C 71 28, 103 28, 103 44" fill="#57534E"/>
+                            <circle cx="97" cy="47" r="2.2" fill="#272429"/>
+                            <path d="M 94 55 Q 98 58 101 55" fill="none" stroke="#57534E" stroke-width="1.5" stroke-linecap="round"/>
+
+                            <!-- Torso recto -->
+                            <path d="M 74 72 C 74 68, 98 68, 98 72 L 102 150 L 71 150 Z" fill="#FA5267"/>
+                            
+                            <!-- Brazo en ángulo de 90° -->
+                            <polyline points="89,86 89,135 158,142" fill="none" stroke="#272429" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                            <text x="52" y="120" font-size="10.5" font-weight="800" fill="#272429">90°</text>
+
+                            <!-- Periféricos externos sobre la mesa -->
+                            <rect x="166" y="144" width="46" height="6" rx="2" fill="#272429"/>
+                            <ellipse cx="228" cy="147" rx="8" ry="4" fill="#272429"/>
+                            <text x="198" y="170" text-anchor="middle" font-size="10.5" font-weight="800" fill="#272429">Teclado y mouse independientes</text>
+
+                            <!-- Línea de visión horizontal -->
+                            <line x1="110" y1="46" x2="348" y2="46" stroke="#059669" stroke-width="2.5" stroke-dasharray="6 4"/>
+                            <circle cx="352" cy="46" r="4.5" fill="#059669"/>
+                            <rect x="135" y="18" width="190" height="20" rx="5" fill="#ECFDF5"/>
+                            <text x="230" y="32" text-anchor="middle" font-size="10.5" font-weight="800" fill="#047857">Distancia visual: 50 a 70 cm (Nivel de ojos)</text>
+
+                            <!-- Soporte + Portátil en escritorio -->
+                            <line x1="305" y1="149" x2="375" y2="149" stroke="#78716C" stroke-width="6" stroke-linecap="round"/>
+                            <line x1="360" y1="149" x2="322" y2="104" stroke="#A8A29E" stroke-width="7" stroke-linecap="round"/>
+                            <line x1="298" y1="110" x2="356" y2="92" stroke="#57534E" stroke-width="6" stroke-linecap="round"/>
+                            <!-- Portátil -->
+                            <line x1="302" y1="106" x2="350" y2="90" stroke="#FA5267" stroke-width="4.5" stroke-linecap="round"/>
+                            <line x1="350" y1="90" x2="354" y2="46" stroke="#FA5267" stroke-width="5.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Pautas de Mantenimiento y Conservación (5 columnas) -->
+                <div class="lg:col-span-5 bg-[#FAF8F6] border border-stone-200 rounded-3xl p-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold text-[#FA5267] uppercase tracking-wider">Conservación del Activo</span>
+                        <h2 class="text-xl font-extrabold text-stone-800 mt-1 mb-3">
+                            Cuidado y Mantenimiento Preventivo
+                        </h2>
+                    </div>
+
+                    <div class="space-y-3.5 text-sm">
+                        <div class="bg-white border border-stone-200 rounded-2xl p-3.5 flex items-start gap-3">
+                            <span class="bg-red-100 text-red-600 font-bold rounded-xl w-8 h-8 flex items-center justify-center shrink-0 mt-0.5">🚫</span>
+                            <div>
+                                <p class="font-extrabold text-stone-800">Prohibido aplicar lubricantes o aceites</p>
+                                <p class="text-stone-600 leading-relaxed text-xs md:text-sm mt-0.5">
+                                    Las bisagras sostienen el peso mediante fricción mecánica. Nunca aplique aceites (como WD-40) ni grasas en los ejes, ya que anularán la capacidad de sostener el portátil.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border border-stone-200 rounded-2xl p-3.5 flex items-start gap-3">
+                            <span class="bg-amber-100 text-amber-700 font-bold rounded-xl w-8 h-8 flex items-center justify-center shrink-0 mt-0.5">⚠️</span>
+                            <div>
+                                <p class="font-extrabold text-stone-800">No forzar las articulaciones ni apoyar el peso corporal</p>
+                                <p class="text-stone-600 leading-relaxed text-xs md:text-sm mt-0.5">
+                                    No exceda los 10 kg de carga ni apoye los brazos sobre el equipo. Si requiere plegar el soporte para transporte y presenta alta rigidez, afloje ligeramente los ejes con las llaves.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border border-stone-200 rounded-2xl p-3.5 flex items-start gap-3">
+                            <span class="bg-emerald-100 text-emerald-700 font-bold rounded-xl w-8 h-8 flex items-center justify-center shrink-0 mt-0.5">🔑</span>
+                            <div>
+                                <p class="font-extrabold text-stone-800">Custodia de llaves y limpieza periódica</p>
+                                <p class="text-stone-600 leading-relaxed text-xs md:text-sm mt-0.5">
+                                    Conserve las 2 llaves en su puesto de trabajo para reajustes preventivos (cada 3 a 6 meses). Limpie la estructura y los topes de caucho antideslizante con un paño húmedo para mantener su adherencia.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="border-t-2 border-stone-200 pt-5 flex flex-col sm:flex-row justify-between items-center text-xs md:text-sm text-stone-500 gap-3">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#FA5267]"></span>
+                    <span class="font-bold text-stone-700">Círculo de Viajes</span>
+                    <span>•</span>
+                    <span>Documento Informativo Interno — Seguridad y Salud en el Trabajo (SST) / TI</span>
+                </div>
+                <span class="font-medium">Referencia Técnica: Soporte Aluminio Premium Plegable SP-EH306</span>
+            </footer>
+
+        </div>
+    </div>
+
+</body>
+</html>
